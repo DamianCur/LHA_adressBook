@@ -1,3 +1,3 @@
-import mainOfTask1 from './task/index'
+import modifyDate from './task/Contact.js'
 
-mainOfTask1()
+modifyDate()
