@@ -1,3 +1,5 @@
-import modifyDate from './task/Contact.js'
+import Contact from "./task/Contact.js";
 
-modifyDate()
+const damian = new Contact("Damian", "Cur", "email", "")
+damian.changeData("name", "")
+console.log(damian);

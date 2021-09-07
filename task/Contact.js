@@ -3,15 +3,7 @@ import {
 } from 'uuid';
 uuidv4();
 
-//--------------------------------------UTILITY--------------------------------------------
-
-const stringValidation = (key, value) => {
-    if (typeof key !== "string" || key.length === 0) throw Error("You have to type in what you want to change.")
-    if (typeof value !== "string" || value.length === 0) throw Error("You have to type in value.")
-}
-
-// import stringValidation from "../example.js"
-
+import stringValidation from './utility.js';
 
 
 class Contact {
@@ -29,18 +21,15 @@ class Contact {
     changeData(key, value) {
         switch (key) {
             case "name":
-                if (typeof key !== "string" || key.length === 0) throw Error("You hve to type in what you want to change.")
-                if (typeof value !== "string" || value.length === 0) throw Error("You have to type in value.")
-                // stringValidation()
-                //jak poprawnie uzyc walidacji korzystajac z funkcji zewnetrznej
+                stringValidation(key, value)
                 this.name = value
                 break;
             case "surname":
-                stringValidation()
+                stringValidation(key, value)
                 this.surname = value
                 break;
             case "email":
-                stringValidation()
+                stringValidation(key, value)
                 this.email = value
                 break;
             case "modificateDate":
@@ -51,6 +40,7 @@ class Contact {
     }
 }
 
-const damian = new Contact("Damian", "Cur", "email", "")
-damian.changeData("name", "asdfg")
-console.log(damian);
+
+
+
+export default Contact
