@@ -22,25 +22,35 @@ class Contact {
         this.modificateDate = new Date().toLocaleDateString()
     }
 
+    changeSurename(value) {
+        this.surname = value
+        this.modificateDate = new Date().toLocaleDateString()
+    }
+
+    changeEmail(value) {
+        this.email = value
+        this.modificateDate = new Date().toLocaleDateString()
+    }
+
     changeData(key, value) {
         switch (key) {
             case "name":
-                // stringValidation(key, value)
-                changeName(value)
+                stringValidation(key, value)
+                this.changeName(value)
                 break;
             case "surname":
                 stringValidation(key, value)
-                this.surname = value
-                this.modificateDate = new Date().toLocaleDateString()
+                this.changeSurename(value)
                 break;
             case "email":
                 stringValidation(key, value)
-                this.email = value
-                this.modificateDate = new Date().toLocaleDateString()
+                this.changeEmail(value)
                 break;
-            case "modificateDate":
-                //walidacja
-                this.modificateDate = new Date().toLocaleDateString()
+                // case "modificateDate":
+                //     //walidacja
+                //     this.modificateDate = new Date().toLocaleDateString()
+            default:
+                throw Error("Choose data to change.")
 
         }
     }
