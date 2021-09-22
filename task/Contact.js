@@ -17,17 +17,19 @@ class Contact {
     }
 
     changeName(value) {
-
+        if (typeof value !== "string" || value.length === 0) throw Error("You have to type in value.")
         this.name = value
         this.modificateDate = new Date().toLocaleDateString()
     }
 
     changeSurename(value) {
+        if (typeof value !== "string" || value.length === 0) throw Error("You have to type in value.")
         this.surname = value
         this.modificateDate = new Date().toLocaleDateString()
     }
 
     changeEmail(value) {
+        if (typeof value !== "string" || value.length === 0) throw Error("You have to type in value.")
         this.email = value
         this.modificateDate = new Date().toLocaleDateString()
     }
@@ -46,9 +48,10 @@ class Contact {
                 stringValidation(key, value)
                 this.changeEmail(value)
                 break;
-                // case "modificateDate":
-                //     //walidacja
-                //     this.modificateDate = new Date().toLocaleDateString()
+            case "modificateDate":
+                //walidacja??
+                this.modificateDate = new Date().toLocaleDateString()
+                break;
             default:
                 throw Error("Choose data to change.")
 
