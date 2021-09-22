@@ -26,6 +26,8 @@
     "prettier": "^2.1.2"
   },
   "dependencies": {
+    "form-data": "^4.0.0",
+    "module_name": "^1.0.0",
     "uuid": "^8.3.1"
   },
   "type": "module"

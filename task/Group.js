@@ -1,21 +1,22 @@
 import {
     v4 as uuidv4
 } from 'uuid';
-import Contact from './Contact';
 
-uuidv4();
+import Contact from "./Contact.js"
+
 
 
 class Group {
-    constructor() {
+    constructor(groupName) {
         this.constactList = []
-        this.group = []
+        this.group = groupName
         this.uuid = uuidv4()
     }
 
     addContact(value) {
-        //zbudować logikę pushowania instancji z klasy Contact do tablicy z listą
-        if(!value instanceof Contact) throw Error ("The object isn't an instance of Contact class")
+       
+        // if(!value instanceof Contact) throw Error ("The object isn't an instance of Contact class")
+        //poprawic niedziałającą walidację
         this.constactList.push(value)
     }
 
