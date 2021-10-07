@@ -19,9 +19,23 @@ class Group {
         this.constactList.push(value)
     }
 
+    removeContact(value) {
+        this.constactList.splice(value)
+    }
+
     changeGroupName(newGroupName) {
         if (typeof newGroupName !== "string" || newGroupName.length === 0) throw Error(`${newGroupName} is not a valid value.`)
         this.groupName = newGroupName
+    }
+
+    isInGroup(value) {
+        //walidacja
+
+        if (this.constactList.includes(value)) {
+            console.log(`${this.groupName} contains searching contact.`);
+        } else {
+            console.log(`${this.groupName} does not contains searching contact.`);
+        }
     }
 
 }
