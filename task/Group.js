@@ -31,7 +31,7 @@ class Group {
     isInGroup(value) {
         //walidacja
         this.constactList.forEach(el => {
-            console.log(this.constactList);
+            //jak dostać się do wartości obiektu contact żeby porównać wartości value i el
         })
     }
 

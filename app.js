@@ -9,8 +9,7 @@ const _adressBook = new AddressBook()
 friends.addContact(natalia)
 _adressBook.addContactToList(damian)
 _adressBook.addGroupToList(friends)
-familly.addContact(damian)
-familly.isInGroup()
+console.log(_adressBook);
 
 
 

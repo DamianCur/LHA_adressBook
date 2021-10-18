@@ -20,8 +20,9 @@ import Contact from './Contact.js'
 
 // }
 
-class AddressBook  {
-    constructor() {        
+// czy klasa powinna być rozszerzeniem class contact i group aby mieć dostęp do metod?
+class AddressBook {
+    constructor() {
         this.contactList = []
         this.groupList = []
     }
@@ -36,8 +37,14 @@ class AddressBook  {
         this.groupList.push(value)
     }
 
-    removeContactFromList() {
-        
+    removeContactFromList(value) {
+        //walidacja
+        this.contactList.splice(value)
+    }
+
+    removeGroupFromList(value) {
+        //walidacja
+        this.groupList.splice(value)
     }
 
 }

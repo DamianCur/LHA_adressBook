@@ -58,15 +58,15 @@ class Contact {
         }
     }
 
-    findContact(value) {
-        const fullName = `${this.name} ${this.surname}`
-        if(value.toUpperCase() !== fullName.toUpperCase()) {
-            throw Error (`There is no contact ${value}`)
-        } else {
-            console.log(this)
-        }        
+    // findContact(value) {
+    //     const fullName = `${this.name} ${this.surname}`
+    //     if(value.toUpperCase() !== fullName.toUpperCase()) {
+    //         throw Error (`There is no contact ${value}`)
+    //     } else {
+    //         console.log(this)
+    //     }        
     }
-}
+
 
 
 
