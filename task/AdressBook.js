@@ -1,21 +1,45 @@
 import Contact from './Contact.js'
 
-class AddressBook {
-    constructor() {
+// class AddressBook {
+//     constructor() {
+//         this.contactList = []
+//         this.groupList = []
+//     }
+
+//     searchContact(value){
+
+//     }
+
+//     //jak uzyskać dostęp do metod z innych klas?
+
+//     // Ma umożliwiać: szukanie kontaktu po frazie, dodawanie/usuwanie/modyfikacje nowych kontaktów, 
+//     // dodawanie/usuwanie/modyfikacje nowych grup
+
+
+
+
+// }
+
+class AddressBook  {
+    constructor() {        
         this.contactList = []
         this.groupList = []
     }
 
-    searchContact(value){
-
+    addContactToList(value) {
+        //walidacja
+        this.contactList.push(value)
     }
 
-    //jak uzyskać dostęp do metod z innych klas?
+    addGroupToList(value) {
+        //walidacja
+        this.groupList.push(value)
+    }
 
-    // Ma umożliwiać: szukanie kontaktu po frazie, dodawanie/usuwanie/modyfikacje nowych kontaktów, 
-    // dodawanie/usuwanie/modyfikacje nowych grup
-
-    
-
+    removeContactFromList() {
+        
+    }
 
 }
+
+export default AddressBook

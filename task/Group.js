@@ -30,12 +30,9 @@ class Group {
 
     isInGroup(value) {
         //walidacja
-
-        if (this.constactList.includes(value)) {
-            console.log(`${this.groupName} contains searching contact.`);
-        } else {
-            console.log(`${this.groupName} does not contains searching contact.`);
-        }
+        this.constactList.forEach(el => {
+            console.log(this.constactList);
+        })
     }
 
 }
