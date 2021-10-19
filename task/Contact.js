@@ -5,9 +5,10 @@ uuidv4();
 
 import stringValidation from './utility.js';
 
-
 class Contact {
     constructor(name, surname, email) {
+        // arugmenty które przychodzą - walidacja
+
         this.name = name
         this.surname = surname
         this.email = email
@@ -17,7 +18,8 @@ class Contact {
     }
 
     changeName(value) {
-        if (typeof value !== "string" || value.length === 0) throw Error("You have to type in value.")
+        // if (typeof value !== "string" || value.length === 0) throw Error("You have to type in value.");
+        stringValidation("Name", value)
         this.name = value
         this.modificateDate = new Date().toLocaleDateString()
     }
@@ -29,7 +31,9 @@ class Contact {
     }
 
     changeEmail(value) {
+        // dodać np. regexpa który sprawdzi czy email jest emailem
         if (typeof value !== "string" || value.length === 0) throw Error("You have to type in value.")
+        // emailValidaiton
         this.email = value
         this.modificateDate = new Date().toLocaleDateString()
     }
@@ -37,23 +41,19 @@ class Contact {
     changeData(key, value) {
         switch (key) {
             case "name":
-                stringValidation(key, value)
                 this.changeName(value)
                 break;
             case "surname":
-                stringValidation(key, value)
                 this.changeSurename(value)
                 break;
             case "email":
-                stringValidation(key, value)
                 this.changeEmail(value)
                 break;
             case "modificateDate":
-                //walidacja??
                 this.modificateDate = new Date().toLocaleDateString()
                 break;
             default:
-                throw Error("Choose data to change.")
+                throw Error("You passed an invalid key.")
 
         }
     }
@@ -65,7 +65,13 @@ class Contact {
     //     } else {
     //         console.log(this)
     //     }        
+
+    findPhrase() { // phrase
+        const values = Object.values(this);
+
+        // .some
     }
+}
 
 
 
