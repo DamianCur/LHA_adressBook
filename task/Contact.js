@@ -3,11 +3,13 @@ import {
 } from 'uuid';
 uuidv4();
 
-import stringValidation from './utility.js';
+import {switchStringValidation, stringValidation, emailValidaiton} from './utility.js'
 
 class Contact {
     constructor(name, surname, email) {
-        // arugmenty które przychodzą - walidacja
+        stringValidation(name)
+        stringValidation(surname)
+        emailValidaiton(email)
 
         this.name = name
         this.surname = surname
@@ -18,8 +20,7 @@ class Contact {
     }
 
     changeName(value) {
-        // if (typeof value !== "string" || value.length === 0) throw Error("You have to type in value.");
-        stringValidation("Name", value)
+        switchStringValidation("Name", value)
         this.name = value
         this.modificateDate = new Date().toLocaleDateString()
     }
@@ -31,9 +32,8 @@ class Contact {
     }
 
     changeEmail(value) {
-        // dodać np. regexpa który sprawdzi czy email jest emailem
+        emailValidaiton(value)
         if (typeof value !== "string" || value.length === 0) throw Error("You have to type in value.")
-        // emailValidaiton
         this.email = value
         this.modificateDate = new Date().toLocaleDateString()
     }
@@ -56,15 +56,7 @@ class Contact {
                 throw Error("You passed an invalid key.")
 
         }
-    }
-
-    // findContact(value) {
-    //     const fullName = `${this.name} ${this.surname}`
-    //     if(value.toUpperCase() !== fullName.toUpperCase()) {
-    //         throw Error (`There is no contact ${value}`)
-    //     } else {
-    //         console.log(this)
-    //     }        
+    }   
 
     findPhrase() { // phrase
         const values = Object.values(this);

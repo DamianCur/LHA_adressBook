@@ -1,26 +1,6 @@
 import Contact from './Contact.js'
+import Group from './Group.js'
 
-// class AddressBook {
-//     constructor() {
-//         this.contactList = []
-//         this.groupList = []
-//     }
-
-//     searchContact(value){
-
-//     }
-
-//     //jak uzyskać dostęp do metod z innych klas?
-
-//     // Ma umożliwiać: szukanie kontaktu po frazie, dodawanie/usuwanie/modyfikacje nowych kontaktów, 
-//     // dodawanie/usuwanie/modyfikacje nowych grup
-
-
-
-
-// }
-
-// czy klasa powinna być rozszerzeniem class contact i group aby mieć dostęp do metod?
 class AddressBook {
     constructor() {
         this.contactList = []
@@ -37,15 +17,14 @@ class AddressBook {
         this.contactList.push(newContact)
     }
     addGroupToList(newGroup) {
-        //walidacja
+        if (!newGroup instanceof Group) throw Error("This group is not valid.")
         this.groupList.push(newGroup)
     }
 
     removeContactFromList(contactToRemove) {
-        if(!contactToRemove instanceof Contact) throw Error ("asdasd")
-        
-        const contactIndex = this.contactList.findIndex(contact => contact.uuid === contactToRemove.uuid)
+        if (!contactToRemove instanceof Contact) throw Error("This contact is not valid.")
 
+        const contactIndex = this.contactList.findIndex(contact => contact.uuid === contactToRemove.uuid)
         if (contactIndex === -1) throw Error("Given contact doesnt exists")
 
         this.contactList.splice(contactToRemove)

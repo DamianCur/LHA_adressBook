@@ -2,10 +2,13 @@ import {
     v4 as uuidv4
 } from 'uuid';
 import Contact from './Contact.js';
+import {
+    stringValidation
+} from './utility.js';
 
 class Group {
     constructor(groupName) {
-        // walidacja
+        stringValidation(groupName)
 
         this.constactList = []
         this.groupName = groupName
@@ -13,18 +16,16 @@ class Group {
     }
 
     addContact(value) {
-        if(!value instanceof Contact) throw Error ("The object isn't an instance of Contact class")
-
-        //poprawic niedziałającą walidację
+        if (!value instanceof Contact) throw Error("The object isn't an instance of Contact class")
         this.constactList.push(value)
     }
 
-    removeContact(value) {
-        // czy w ogóle ten contact jest w liscie
-
-        // poszukać index tego kontaktu
-
-        this.constactList.splice(value) // contactIndex, 1
+    removeContact(contactToRemove) {
+        if (!this.constactList.includes(contactToRemove)) throw Error("Contact doesn't exists.")
+        const indexOfSearchingElement = this.constactList.findIndex(el => {
+            el.uuid === contactToRemove.uuid
+        })
+        this.constactList.splice(indexOfSearchingElement, 1)
     }
 
     changeGroupName(newGroupName) {
@@ -32,12 +33,22 @@ class Group {
         this.groupName = newGroupName
     }
 
-    isInGroup(name, surname) {
-        //walidacja
-        this.constactList.forEach(el => {
-            //jak dostać się do wartości obiektu contact żeby porównać wartości value i el
-            console.log(el.uuid);
+    isInGroup(secondName) {
+        stringValidation(secondName)
+
+        const contactValues = this.constactList.map(el => {
+            return Object.values(el);
         })
+
+        const test = contactValues.some(el => {
+            el.includes(secondName)
+            //dokończyć metode
+           
+
+
+        })
+
+        console.log(test);
     }
 
 }
