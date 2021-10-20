@@ -49,10 +49,7 @@ class Group {
             })
         })
 
-
-        console.log(isInValues);
         return isInValues
-
     }
 };
 
