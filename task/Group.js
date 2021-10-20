@@ -42,17 +42,15 @@ class Group {
             return Object.values(contact)
         });
 
-        // [ ['Jan'], ['Agata'], [] ]
-
         const isInValues = contactValues.some((values, i, arr) => {
-            // values - tablica z wartościami
+
             return values.some(value => {
-               return value === secondName
-            }) // true / false
+                return value === secondName
+            })
         })
 
-        console.log(isInValues)
 
+        console.log(isInValues);
         return isInValues
 
     }

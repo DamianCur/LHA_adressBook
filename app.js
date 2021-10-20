@@ -7,12 +7,11 @@ const friends = new Group("Znajomi")
 const familly = new Group("Rodzina")
 const adressBook = new AddressBook()
 adressBook.addContactToList(damian)
-adressBook.addContactToList(natalia)
-// adressBook.changeContactData(damian, "email", "losowy@email.com")
 friends.addContact(damian)
 friends.addContact(natalia)
-// console.log(friends);
-friends.isInGroup("Damian")
+adressBook.changeContactData(damian, "name", "asdasd")
+
+
 
 // console.log(adressBook.contactList[0])
 

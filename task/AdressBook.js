@@ -30,15 +30,14 @@ class AddressBook {
         this.contactList.splice(contactToRemove)
     }
 
-    removeGroupFromList(value) {
-        //walidacja
+    removeGroupFromList(groupToRemove) {
+        if(!groupToRemove instanceof Group) throw Error ("This group doesn't exists.")
         this.groupList.splice(value)
     }
 
     changeContactData(contact, key, value) {
-        // sprawdzić czy kontakt istnieje w tablicy
+        if(!this.contactList.includes(contact)) throw Error ("Contact not find.")
 
-        // index tego kontaktu3
         const index = this.contactList.findIndex((el) => el.uuid === contact.uuid)
 
         this.contactList[index].changeData(key, value);
@@ -55,6 +54,3 @@ class AddressBook {
 }
 
 export default AddressBook
-
-// EmailBuilder
-// EmailBuilder.addEmail("email").addName("Name").addTitle("abbdaf").send();
