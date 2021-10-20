@@ -33,24 +33,29 @@ class Group {
         this.groupName = newGroupName
     }
 
+
+
     isInGroup(secondName) {
         stringValidation(secondName)
 
-        const contactValues = this.constactList.map(el => {
-            return Object.values(el);
+        const contactValues = this.constactList.map(contact => {
+            return Object.values(contact)
+        });
+
+        // [ ['Jan'], ['Agata'], [] ]
+
+        const isInValues = contactValues.some((values, i, arr) => {
+            // values - tablica z wartościami
+            return values.some(value => {
+               return value === secondName
+            }) // true / false
         })
 
-        const test = contactValues.some(el => {
-            el.includes(secondName)
-            //dokończyć metode
-           
+        console.log(isInValues)
 
+        return isInValues
 
-        })
-
-        console.log(test);
     }
-
-}
+};
 
 export default Group

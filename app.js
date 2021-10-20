@@ -11,6 +11,7 @@ adressBook.addContactToList(natalia)
 // adressBook.changeContactData(damian, "email", "losowy@email.com")
 friends.addContact(damian)
 friends.addContact(natalia)
+// console.log(friends);
 friends.isInGroup("Damian")
 
 // console.log(adressBook.contactList[0])
