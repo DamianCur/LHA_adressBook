@@ -31,25 +31,26 @@ class AddressBook {
     }
 
     removeGroupFromList(groupToRemove) {
-        if(!groupToRemove instanceof Group) throw Error ("This group doesn't exists.")
+        if (!groupToRemove instanceof Group) throw Error("This group doesn't exists.")
         this.groupList.splice(value)
     }
 
     changeContactData(contact, key, value) {
-        if(!this.contactList.includes(contact)) throw Error ("Contact not find.")
+        if (!this.contactList.includes(contact)) throw Error("Contact not find.")
 
         const index = this.contactList.findIndex((el) => el.uuid === contact.uuid)
 
         this.contactList[index].changeData(key, value);
     }
 
-    findContacts() {
-        // filter
-        this.contactList.forEach(el => {
-            el.findPhrase();
+    findContacts(searchingContact) {
+
+        const findedContact = this.contactList.filter(contact => {
+            return contact === searchingContact
         })
 
-        // return result;
+        console.log(findedContact);
+        return findedContact
     }
 }
 

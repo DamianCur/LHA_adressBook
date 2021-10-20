@@ -7,15 +7,7 @@ const friends = new Group("Znajomi")
 const familly = new Group("Rodzina")
 const adressBook = new AddressBook()
 adressBook.addContactToList(damian)
+adressBook.addContactToList(natalia)
 friends.addContact(damian)
 friends.addContact(natalia)
-adressBook.changeContactData(damian, "name", "asdasd")
-
-
-
-// console.log(adressBook.contactList[0])
-
-// friends.addContact(natalia)
-// _adressBook.addContactToList(damian)
-// _adressBook.addGroupToList(friends)
-// console.log(_adressBook);
+adressBook.findContacts(natalia)
